@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button, Col, Row } from "antd";
+import { Row } from "antd";
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading/Loading";
 import axios from "axios";
@@ -23,6 +23,16 @@ function App() {
     setUserData(filteredData);
   };
 
+  /// update user
+  const updateUser = (id, data) => {
+    const newUserData = userData.map((usr) => {
+      if (usr.id === id) {
+        usr = { ...usr, ...data };
+      }
+      return usr;
+    });
+    setUserData(newUserData);
+  };
   return (
     <div className="App">
       {loading ? (
@@ -39,6 +49,7 @@ function App() {
                   key={user.id}
                   user={user}
                   handleDelete={handleDelete}
+                  updateUser={updateUser}
                 />
               ))}
             </Row>

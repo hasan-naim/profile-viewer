@@ -29,3 +29,33 @@
   font-size: 18px;
   margin-right: 8px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flex {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.flex label {
+  width: 15%;
+}
+input {
+  border: 1px solid #d9d9d9;
+  /* width: 100%; */
+  flex: 1;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  padding: 4px 11px;
+  outline: none;
+  border-radius: 3px;
+}
+
+input:hover,
+input:focus {
+  border: 1px solid #1890ff;
+}
